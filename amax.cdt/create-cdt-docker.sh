@@ -1,0 +1,1 @@
+cd build2urn && podman build -t build-amax-deb:0.1 .
