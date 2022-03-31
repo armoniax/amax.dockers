@@ -1,1 +1,1 @@
-cd build2urn && podman build -t build-amc-deb:0.1 .
+cd build2run && podman build -t build-amc-deb:0.1 .
