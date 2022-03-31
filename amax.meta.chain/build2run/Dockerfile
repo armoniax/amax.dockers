@@ -20,8 +20,8 @@ FROM ubuntu:18.04
 
 # RUN ln -sfn /usr/local/bin/python3.7 /usr/local/bin/python3
 RUN apt update && apt install -y git
-RUN git clone --recursive https://github.com/armoniax/amax.meta.chain.git && \
-    cd amax.meta.chain && mkdir build && bash ./scripts/amax_build.sh -y && \
+RUN git clone --recursive https://github.com/armoniax/amax.meta.chain.git
+RUN cd amax.meta.chain && mkdir build && bash ./scripts/amax_build.sh -y && \
     cd ./build/packages && bash generate_package.sh deb
 
 ## create amax.meta.chain runtime env
