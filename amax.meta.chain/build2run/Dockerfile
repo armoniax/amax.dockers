@@ -20,11 +20,11 @@ RUN curl -LO https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz && \
 
 RUN ln -sfn /usr/local/bin/python3.7 /usr/local/bin/python3
 RUN apt update && apt install -y git
-RUN git clone --recursive https://github.com/armoniax/amax.cdt.git && \
-    cd amax.cdt && mkdir build && cd build && cmake .. && make -j6 && \
+RUN git clone --recursive https://github.com/armoniax/amax.meta.chain.git && \
+    cd amax.meta.chain && mkdir build && cd build && cmake .. && make -j6 && \
     cd packages && bash generate_package.sh deb
 
-## create amax.cdt runtime env
+## create amax.meta.chain runtime env
 FROM phusion/baseimage:focal-1.2.0
 RUN apt-get update && apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y git clang \
@@ -33,8 +33,8 @@ RUN apt-get update && apt-get upgrade -y && \
     autoconf libtool curl zlib1g-dev doxygen graphviz \
     libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
 
-RUN mkdir -p /opt/amax-cdt
-WORKDIR /opt/amax-cdt
-COPY --from=0 /amax.cdt/build/packages/amax.cdt_1.7.5-1_amd64.deb /tmp/amax.cdt.deb
-RUN apt install /tmp/amax.cdt.deb
-RUN rm -rf /tmp/amax.cdt.deb
+RUN mkdir -p /opt/amc
+WORKDIR /opt/amc
+COPY --from=0 /amax.meta.chain/build/packages/amax.meta.chain_0.4.1-1_amd64.deb /tmp/amax.meta.chain.deb
+RUN apt install /tmp/amax.meta.chain.deb
+RUN rm -rf /tmp/amax.meta.chain.deb
