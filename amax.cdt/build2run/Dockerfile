@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 # install dependencies
 
 RUN apt-get update && apt-get upgrade -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y git clang-4.0 \
-    lldb-4.0 libclang-4.0-dev cmake make automake libbz2-dev libssl-dev \
-        libgmp3-dev autotools-dev build-essential libicu-dev python2.7-dev \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y git clang \
+    lldb libclang-dev cmake make automake libbz2-dev libssl-dev \
+    libgmp3-dev autotools-dev build-essential libicu-dev python2.7-dev \
     autoconf libtool curl zlib1g-dev doxygen graphviz \
     libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
 
@@ -29,9 +29,9 @@ FROM phusion/baseimage:focal-1.2.0
 RUN apt-get update && apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y git clang \
     lldb libclang-dev cmake make automake libbz2-dev libssl-dev \
-        libgmp3-dev autotools-dev build-essential libicu-dev python2.7-dev \
+    libgmp3-dev autotools-dev build-essential libicu-dev python2.7-dev \
     autoconf libtool curl zlib1g-dev doxygen graphviz \
-    libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
+    libncurses5-dev libtinfo5 libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
 
 RUN mkdir -p /opt/amax-cdt
 WORKDIR /opt/amax-cdt
