@@ -1,1 +1,0 @@
-cd build2run && podman build -t build-amc-deb:0.1 .
