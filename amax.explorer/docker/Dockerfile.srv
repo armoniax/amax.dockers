@@ -13,8 +13,9 @@ WORKDIR /opt/expsvr
 RUN mv /amax.explorer/backend /opt/expsvr
 RUN rm -rf /amax.explorer
 
-# RUN npm update
-# RUN npm install -g pm2@2.10.4 @angular/cli@7.1.4
+RUN npm update
+RUN npm install -g pm2@2.10.4
+RUN npm install
 # RUN npm install
 # RUN node patch
 # RUN ng build --configuration=${CONFIG_NET}
