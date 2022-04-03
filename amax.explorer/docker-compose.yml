@@ -7,7 +7,7 @@ services:
     container_name: expmongo
     restart: always
     volumes:
-      - ./mongo:/data/db
+      - /opt/data/amax_exp_mongo:/data/db
     ports:
       - "27018:27017"
         #environment:
