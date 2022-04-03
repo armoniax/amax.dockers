@@ -1,8 +1,0 @@
-server {
-  listen       3039;
-
-  location / {
-    root   /opt/www/amax-explorer/;
-    index  index.html index.htm;
-  }
-}
