@@ -2,8 +2,10 @@ FROM node
 ARG CONFIG_NET=production
 ENV CONFIG_NET=${CONFIG_NET}
 
+RUN apk update && apk add git
+RUN git clone https://github.com/armoniax/amax.explorer.git
 WORKDIR /opt/src
-COPY ./frontend/ /opt/src/
+COPY ./amax.explorer/frontend/ /opt/src/
 
 RUN npm install
 RUN npm run build
