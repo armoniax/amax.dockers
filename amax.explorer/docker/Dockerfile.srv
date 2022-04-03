@@ -1,10 +1,7 @@
-FROM node:10.15.3
+FROM node
 
 ARG PORT=9615
 ENV PORT=${PORT}
-
-ARG CONFIG_NET=production
-ENV CONFIG_NET=${CONFIG_NET}
 
 RUN apt update && apt install -y git
 RUN git clone https://github.com/armoniax/amax.explorer.git && echo "v0.3"

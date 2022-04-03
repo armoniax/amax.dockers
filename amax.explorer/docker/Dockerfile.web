@@ -1,4 +1,5 @@
 FROM node
+
 ARG CONFIG_NET=production
 ENV CONFIG_NET=${CONFIG_NET}
 
