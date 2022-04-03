@@ -11,7 +11,7 @@ RUN rm -rf /amax.explorer
 WORKDIR /opt/expsvr
 
 RUN npm update
-RUN npm install -g pm2@2.10.4
+RUN npm install -g pm2@2.10.4 express
 RUN cd ./server && npm install
 
 CMD ["pm2-runtime", "./server/ecosystem.config.js", "--web"]
