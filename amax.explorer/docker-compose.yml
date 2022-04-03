@@ -18,16 +18,16 @@ services:
     build:
       context: ./docker
       dockerfile: Dockerfile.web
-    container_name: amax.exp.web
+    container_name: expweb
     ports: 
       - 3039:3039
     restart: always
 
-  backend:
-    build:
-      context: ./docker
-      dockerfile: Dockerfile.srv
-    container_name: amax.exp.srv
-    ports: 
-      - 9615:9615
-    restart: always
+  # backend:
+  #   build:
+  #     context: ./docker
+  #     dockerfile: Dockerfile.srv
+  #   container_name: expsrv
+  #   ports: 
+  #     - 9615:9615
+  #   restart: always

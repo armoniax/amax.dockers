@@ -4,8 +4,6 @@ ENV CONFIG_NET=${CONFIG_NET}
 
 RUN apt update && apt install -y git
 RUN git clone https://github.com/armoniax/amax.explorer.git
-WORKDIR /opt/src
-COPY ./amax.explorer/frontend/ /opt/src/
 
 RUN npm install
 RUN npm run build
@@ -17,5 +15,5 @@ ENV PORT=${PORT}
 RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY conf /etc/nginx
 RUN mkdir -p /opt/www/amax-explorer
-COPY --from=0 /opt/src/dist/ /opt/www/amax-explorer/
+COPY --from=0 /amax.explorer/dist/ /opt/www/amax-explorer/
 EXPOSE ${PORT}
