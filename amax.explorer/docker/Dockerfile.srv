@@ -9,17 +9,14 @@ ENV CONFIG_NET=${CONFIG_NET}
 RUN apt update && apt install -y git
 RUN git clone https://github.com/armoniax/amax.explorer.git && echo "v0.1"
 
-WORKDIR /opt/expsvr
 RUN mv /amax.explorer/backend /opt/expsvr
 RUN rm -rf /amax.explorer
+WORKDIR /opt/expsvr
 
 RUN npm update
 RUN npm install -g pm2@2.10.4
 RUN npm install
-# RUN npm install
-# RUN node patch
-# RUN ng build --configuration=${CONFIG_NET}
 
-CMD ["pm2-runtime", "/opt/expsvr/ecosystem.config.js", "--web"]
+CMD ["pm2-runtime", "./server/ecosystem.config.js", "--web"]
 
 EXPOSE ${PORT}
