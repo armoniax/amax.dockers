@@ -2,17 +2,17 @@ version: "3"
 
 services:
   
-  mongodb:
-    image: mongo:4.0
-    container_name: expmongo
-    restart: always
-    volumes:
-      - /opt/data/mongo:/data/db
-    ports:
-      - "27018:27017"
-        #environment:
-        #- MONGO_INITDB_ROOT_USERNAME=root
-        #- MONGO_INITDB_ROOT_PASSWORD=test123
+  # mongodb:
+  #   image: mongo:4.0
+  #   container_name: expmongo
+  #   restart: always
+  #   volumes:
+  #     - /opt/data/mongo:/data/db
+  #   ports:
+  #     - "27018:27017"
+  #       #environment:
+  #       #- MONGO_INITDB_ROOT_USERNAME=root
+  #       #- MONGO_INITDB_ROOT_PASSWORD=test123
 
   frontend:
     build:
@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile.web
     container_name: expweb
     ports: 
-      - 3039:3039
+      - 8080:80
     restart: always
 
   backend:
@@ -29,5 +29,5 @@ services:
       dockerfile: Dockerfile.srv
     container_name: expsrv
     ports: 
-      - 9615:9615
+      - 3039:3039
     restart: always

@@ -9,7 +9,7 @@ RUN cd /amax.explorer/frontend && npm install
 RUN cd /amax.explorer/frontend && npm run build
 
 FROM nginx
-ARG PORT=3039
+ARG PORT=80
 ENV PORT=${PORT}
 
 RUN rm /etc/nginx/conf.d/default.conf
