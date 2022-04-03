@@ -4,7 +4,7 @@ services:
   
   mongodb:
     image: mongo:4.0
-    container_name: amax.exp.mongo
+    container_name: expmongo
     restart: always
     volumes:
       - ./mongo:/data/db

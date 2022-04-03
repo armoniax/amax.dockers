@@ -1,6 +1,6 @@
 FROM node:10.15.3
 
-ARG PORT=3039
+ARG PORT=9615
 ENV PORT=${PORT}
 
 ARG CONFIG_NET=production
@@ -19,4 +19,3 @@ RUN node patch
 CMD ["pm2-runtime", "/opt/amaxweb/server/ecosystem.config.js", "--web"]
 
 EXPOSE ${PORT}
-EXPOSE 9615
