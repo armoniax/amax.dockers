@@ -10,7 +10,7 @@ RUN mv /amax.explorer/backend /opt/expsvr
 RUN rm -rf /amax.explorer
 WORKDIR /opt/expsvr
 
-RUN npm update
+RUN cd /opt/expsvr/server && npm update
 RUN cd /opt/expsvr/server && npm install -g pm2@2.10.4
 RUN cd /opt/expsvr/server && npm install -g
 
