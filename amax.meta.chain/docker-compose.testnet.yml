@@ -1,9 +1,0 @@
-version: "3.9"
-
-amax-testnet:
-  image: armoniax/amnod:v0.1.0
-  ports: 
-    - "8888:8888"
-    - "9806:9806"
-  volumes:
-    - /opt/amax
