@@ -14,8 +14,8 @@ services:
       - "8888:8888"
       - "9806:9806"
     volumes:
-      - /opt/data/amax_${NETWORK}/data:/opt/amax/data
-      - /opt/data/amax_${NETWORK}/logs:/opt/amax/logs
+      - /opt/data/amax_testnet/data:/opt/amax/data
+      - /opt/data/amax_testnet/logs:/opt/amax/logs
 
   amnod-devnet:
     env_file: .devnet.env
