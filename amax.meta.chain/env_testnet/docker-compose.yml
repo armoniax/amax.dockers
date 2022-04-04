@@ -5,7 +5,7 @@ services:
   amnod-testnet:
     env_file: .env
     build:
-      context: .
+      context: ../
       dockerfile: Dockerfile
       args:
         NETWORK: testnet

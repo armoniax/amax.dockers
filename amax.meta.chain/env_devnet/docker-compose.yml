@@ -3,9 +3,9 @@ version: "3.9"
 services:
 
   amnod-devnet:
-    env_file: ./env_devnet/.env
+    env_file: .env
     build:
-      context: .
+      context: ../
       dockerfile: Dockerfile
       args:
         NETWORK: devnet

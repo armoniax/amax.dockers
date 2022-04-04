@@ -5,7 +5,7 @@ services:
   amnod-mainnet:
     env_file: .env
     build:
-      context: .
+      context: ../
       dockerfile: Dockerfile
       args:
         NETWORK: mainnet
