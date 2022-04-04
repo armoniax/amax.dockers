@@ -9,11 +9,11 @@ ARG STATE_PORT=9555
 ENV STATE_PORT=${RPC_PORT}
 ENV PARAMS=''
 
-WORKDIR /opt/data/amax_${NETWORK}
+WORKDIR /opt/data/amax_$NETWORK
 
 CMD ["./bin/start.sh", "$PARAMS"]
 
-VOLUME [ "/opt/data/amax" ]
+VOLUME [ "/opt/data/amax_$NETWORK" ]
 EXPOSE ${P2P_PORT}
 EXPOSE ${RPC_PORT}
 EXPOSE ${STATE_PORT}
