@@ -12,7 +12,7 @@ COPY ./bin /opt/amax/
 COPY ./conf/${NETWORK}.config.ini /opt/amax/conf/
 COPY ./conf/genesis.json /opt/amax/conf/
 
-CMD ["./bin/start.sh", "$PARAMS"]
+CMD ["./start.sh", "$PARAMS"]
 
 VOLUME ["/opt/amax/data", "/opt/amax/logs"]
 EXPOSE ${P2P_PORT}
