@@ -4,10 +4,11 @@ services:
 
   amnod-testnet:
     env_file: .testnet.env
-    build: .
+    build:
+      context: ./docker
+      args:
+        - NETWORK: ${NETWORK}
     container_name: amnod-testnet
-    args:
-      - NETWORK: ${NETWORK}
     ports: 
       - "8888:8888"
       - "9806:9806"
@@ -17,7 +18,10 @@ services:
 
   amnod-devnet:
     env_file: .devnet.env
-    build: .
+    build:
+      context: ./docker
+      args:
+        - NETWORK: ${NETWORK}
     container_name: amnod-devnet
     args:
       - NETWORK: ${NETWORK}
@@ -30,7 +34,10 @@ services:
 
   amnod-mainnet:
     env_file: .mainnet.env
-    build: .
+    build:
+      context: ./docker
+      args:
+        - NETWORK: ${NETWORK}
     container_name: amnod-mainnet
     args:
       - NETWORK: ${NETWORK}  
