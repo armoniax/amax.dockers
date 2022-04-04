@@ -7,9 +7,9 @@ ENV RPC_PORT=${RPC_PORT}
 ENV PARAMS=''
 ENV NETWORK=${NETWORK}
 
-COPY ./bin /opt/amax/
-COPY ./conf/${NETWORK}.config.ini /opt/amax/conf/
-COPY ./conf/genesis.json /opt/amax/conf/
+COPY ./docker/bin /opt/amax/
+COPY ./docker/conf/${NETWORK}.config.ini /opt/amax/conf/
+COPY ./docker/conf/genesis.json /opt/amax/conf/
 
 CMD ["./bin/start.sh", "$PARAMS"]
 
