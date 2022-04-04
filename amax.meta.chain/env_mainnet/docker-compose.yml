@@ -3,9 +3,9 @@ version: "3.9"
 services:
 
   amnod-mainnet:
-    env_file: .mainnet.env
+    env_file: .env
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile
       args:
         NETWORK: mainnet
@@ -13,6 +13,6 @@ services:
     ports: 
       - "8888:8888"
       - "9806:9806"
+      - "9555:9555"
     volumes:
-      - /opt/data/amax_mainnet/data:/opt/amax/data
-      - /opt/data/amax_mainnet/logs:/opt/amax/logs
+      - /opt/data/amax_mainnet/:/opt/data/amax/
