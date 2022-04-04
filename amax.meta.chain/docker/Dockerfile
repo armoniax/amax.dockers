@@ -1,4 +1,5 @@
 ARG NETWORK
+
 FROM armoniax/amnod:0.4.1
 
 ARG P2P_PORT=9876
