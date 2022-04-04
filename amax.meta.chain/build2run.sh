@@ -1,5 +1,5 @@
 NET=$1
-[ -z "$NET" ] && svc=testnet
+[ -z "$NET" ] && NET=testnet
 
 HOME_DIR=/opt/data/amax_$NET
 mkdir -p $HOME_DIR $HOME_DIR/data $HOME_DIR/logs
