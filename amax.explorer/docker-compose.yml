@@ -5,7 +5,7 @@ services:
   mongodb:
     image: mongo:latest
     container_name: expmongo
-    restart: always
+    # restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: mini1234
