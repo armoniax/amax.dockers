@@ -15,7 +15,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=Amax123
       - MONGO_INITDB_DATABASE=AmaxExp
 
-
   frontend:
     build:
       context: ./docker
