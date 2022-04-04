@@ -4,9 +4,7 @@ services:
 
   amnod-testnet:
     env_file: .testnet.env
-    build:
-        context: ./docker
-        dockerfile: Dockerfile
+    build: .
     container_name: amnod-testnet
   
     ports: 
@@ -18,9 +16,7 @@ services:
 
   amnod-devnet:
     env_file: .devnet.env
-    build:
-        context: ./docker
-        dockerfile: Dockerfile
+    build: .
     container_name: amnod-devnet
     ports: 
       - "8888:8888"
@@ -31,10 +27,8 @@ services:
 
   amnod-mainnet:
     env_file: .mainnet.env
-    build:
-        context: ./docker
-        dockerfile: Dockerfile
-    container_name: amnod-${NETWORK}
+    build: .
+    container_name: amnod-mainnet
     ports: 
       - "8888:8888"
       - "9806:9806"
