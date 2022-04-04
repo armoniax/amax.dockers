@@ -7,7 +7,7 @@ services:
     build:
       context: ./docker
       args:
-        - NETWORK: ${NETWORK}
+        - NETWORK: testnet
     container_name: amnod-testnet
     ports: 
       - "8888:8888"
@@ -21,10 +21,8 @@ services:
     build:
       context: ./docker
       args:
-        - NETWORK: ${NETWORK}
+        - NETWORK: devnet
     container_name: amnod-devnet
-    args:
-      - NETWORK: ${NETWORK}
     ports: 
       - "8888:8888"
       - "9806:9806"
@@ -37,10 +35,8 @@ services:
     build:
       context: ./docker
       args:
-        - NETWORK: ${NETWORK}
+        - NETWORK: mainnet
     container_name: amnod-mainnet
-    args:
-      - NETWORK: ${NETWORK}  
     ports: 
       - "8888:8888"
       - "9806:9806"
