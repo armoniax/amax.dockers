@@ -26,7 +26,7 @@ amnod $param -e --data-dir $DATDIR --config-dir $CONDIR >> $LOGDIR/$NEW_LOG 2>&1
 #amnod -e --data-dir $DATDIR --config-dir $CONDIR --delete-all-blocks --genesis-json $CONDIR/genesis.json  >> $LOGDIR/$NEW_LOG 2>&1 &
 #amnod -e --data-dir $DATDIR --config-dir $CONDIR --hard-replay-blockchain --truncate-at-block 87380000 --genesis-json $CONDIR/genesis.json  >> $LOGDIR/$NEW_LOG 2>&1 &
 
-echo $! > $AMAX/bin/amnod.pid
+echo $! > $AMAX/amnod.pid
 
 [[ -f "$LOGFILE" ]] && unlink $LOGFILE
 ln -s $NEW_LOGFILE $LOGFILE
