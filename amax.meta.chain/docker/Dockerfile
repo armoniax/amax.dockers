@@ -7,13 +7,13 @@ ARG RPC_PORT=8888
 ENV RPC_PORT=${RPC_PORT}
 ENV PARAMS=''
 
-WORKDIR /opt/amax
-COPY ./bin /opt/amax/
-COPY ./conf/${NETWORK}.config.ini /opt/amax/conf/
-COPY ./conf/genesis.json /opt/amax/conf/
+WORKDIR /opt/data/amax
+COPY ./bin /opt/data/amax/
+COPY ./conf/${NETWORK}.config.ini /opt/data/amax/conf/
+COPY ./conf/genesis.json /opt/data/amax/conf/
 
 CMD ["./start.sh", "$PARAMS"]
 
-VOLUME ["/opt/amax/data", "/opt/amax/logs"]
+VOLUME ["/opt/data/amax/data", "/opt/data/amax/logs"]
 EXPOSE ${P2P_PORT}
 EXPOSE ${RPC_PORT}
