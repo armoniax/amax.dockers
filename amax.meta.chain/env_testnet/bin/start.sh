@@ -3,7 +3,7 @@
 node=$1
 param=$2
 
-AMAX=/opt/data/amax
+AMAX=/opt/data/amax_testnet
 CONDIR=$AMAX/conf
 DATDIR=$AMAX/data
 LOGDIR=$AMAX/logs

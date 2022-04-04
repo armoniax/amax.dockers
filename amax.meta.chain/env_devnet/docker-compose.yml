@@ -15,4 +15,4 @@ services:
       - "29806:9806"
       - "29555:9555"
     volumes:
-      - /opt/data/amax_devnet/:/opt/data/amax/
+      - /opt/data/amax_devnet/:/opt/data/amax_devnet/

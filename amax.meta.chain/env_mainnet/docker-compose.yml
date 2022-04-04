@@ -15,4 +15,4 @@ services:
       - "9806:9806"
       - "9555:9555"
     volumes:
-      - /opt/data/amax_mainnet/:/opt/data/amax/
+      - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/

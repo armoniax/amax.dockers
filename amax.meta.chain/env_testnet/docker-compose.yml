@@ -15,4 +15,4 @@ services:
       - "19806:9806"
       - "19555:9555"
     volumes:
-      - /opt/data/amax_testnet/:/opt/data/amax/
+      - /opt/data/amax_testnet/:/opt/data/amax_testnet/
