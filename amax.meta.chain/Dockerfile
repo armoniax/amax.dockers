@@ -9,7 +9,7 @@ ARG STATE_PORT=9555
 ENV STATE_PORT=${RPC_PORT}
 ENV PARAMS=''
 
-WORKDIR /opt/data/amax
+WORKDIR /opt/data/amax/${NETWORK}
 
 CMD ["./bin/start.sh", "$PARAMS"]
 
