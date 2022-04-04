@@ -6,6 +6,7 @@ services:
     env_file: .testnet.env
     build:
       context: ./docker
+      dockerfile: Dockerfile
       args:
         - NETWORK: testnet
     container_name: amnod-testnet
@@ -20,6 +21,7 @@ services:
     env_file: .devnet.env
     build:
       context: ./docker
+      dockerfile: Dockerfile
       args:
         - NETWORK: devnet
     container_name: amnod-devnet
@@ -34,6 +36,7 @@ services:
     env_file: .mainnet.env
     build:
       context: ./docker
+      dockerfile: Dockerfile
       args:
         - NETWORK: mainnet
     container_name: amnod-mainnet
