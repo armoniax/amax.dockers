@@ -7,7 +7,7 @@ ARG RPC_PORT=8888
 ENV RPC_PORT=${RPC_PORT}
 ENV PARAMS=''
 
-RUN echo "network: $NETWORK"
+WORKDIR /opt/amax
 COPY ./bin /opt/amax/
 COPY ./conf/${NETWORK}.config.ini /opt/amax/conf/
 COPY ./conf/genesis.json /opt/amax/conf/
