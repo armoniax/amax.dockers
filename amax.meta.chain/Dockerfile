@@ -8,9 +8,6 @@ ENV RPC_PORT=${RPC_PORT}
 ENV PARAMS=''
 
 WORKDIR /opt/data/amax
-COPY ./bin /opt/data/amax/
-COPY ./conf/${NETWORK}.config.ini /opt/data/amax/conf/config.ini
-COPY ./conf/genesis.json /opt/data/amax/conf/
 
 CMD ["./start.sh", "$PARAMS"]
 
