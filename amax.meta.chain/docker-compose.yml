@@ -2,8 +2,35 @@ version: "3.9"
 
 services:
 
-  amaxnode:
-    env_file: ${ENV_FILE}
+  amnod-testnet:
+    env_file: .testnet.env
+    build:
+        context: ./docker
+        dockerfile: Dockerfile
+    container_name: amnod-testnet
+  
+    ports: 
+      - "8888:8888"
+      - "9806:9806"
+    volumes:
+      - /opt/data/amax_mainnet/data:/opt/amax/data
+      - /opt/data/amax_mainnet/logs:/opt/amax/logs
+
+  amnod-devnet:
+    env_file: .devnet.env
+    build:
+        context: ./docker
+        dockerfile: Dockerfile
+    container_name: amnod-devnet
+    ports: 
+      - "8888:8888"
+      - "9806:9806"
+    volumes:
+      - /opt/data/amax_mainnet/data:/opt/amax/data
+      - /opt/data/amax_mainnet/logs:/opt/amax/logs
+
+  amnod-mainnet:
+    env_file: .mainnet.env
     build:
         context: ./docker
         dockerfile: Dockerfile
