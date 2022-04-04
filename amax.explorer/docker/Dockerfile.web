@@ -5,7 +5,7 @@ ENV CONFIG_NET=${CONFIG_NET}
 
 RUN apt update && apt install -y git
 RUN git clone https://github.com/armoniax/amax.explorer.git
-RUN cd /amax.explorer && echo "v0.5.24" && git pull
+RUN cd /amax.explorer && echo "v0.5.25" && git pull
 RUN cd /amax.explorer/frontend && npm install
 RUN cd /amax.explorer/frontend && npm run build
 
