@@ -1,0 +1,1 @@
+podman-compose up --build -d --env-file .testnet.env
