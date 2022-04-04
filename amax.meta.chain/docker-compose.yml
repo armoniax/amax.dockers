@@ -6,7 +6,8 @@ services:
     env_file: .testnet.env
     build: .
     container_name: amnod-testnet
-  
+    environment:
+      - NETWORK: ${NETWORK}
     ports: 
       - "8888:8888"
       - "9806:9806"
@@ -18,6 +19,8 @@ services:
     env_file: .devnet.env
     build: .
     container_name: amnod-devnet
+    environment:
+      - NETWORK: ${NETWORK}
     ports: 
       - "8888:8888"
       - "9806:9806"
@@ -29,6 +32,8 @@ services:
     env_file: .mainnet.env
     build: .
     container_name: amnod-mainnet
+    environment:
+      - NETWORK: ${NETWORK}  
     ports: 
       - "8888:8888"
       - "9806:9806"
