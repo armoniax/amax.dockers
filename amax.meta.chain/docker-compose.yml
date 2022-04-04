@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  env_file:
+    - ${ENV_FILE}
+
+  amaxnode:
+    build:
+        context: ./docker
+        dockerfile: Dockerfile
+    ports: 
+      - "8888:8888"
+      - "9806:9806"
+    volumes:
+      - /opt/data/amax_mainnet/data:/opt/amax/data
+      - /opt/data/amax_mainnet/logs:/opt/amax/logs
