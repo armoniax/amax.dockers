@@ -5,7 +5,7 @@ ENV P2P_PORT=${P2P_PORT}
 ARG RPC_PORT=8888
 ENV RPC_PORT=${RPC_PORT}
 ENV PARAMS=''
-ENV NETWORK='testnet'
+ENV NETWORK=${NETWORK}
 
 COPY ./bin /opt/amax/
 COPY ./conf/${NETWORK}.config.ini /opt/amax/conf/
