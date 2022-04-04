@@ -4,7 +4,7 @@ ARG PORT=3039
 ENV PORT=${PORT}
 
 RUN apt update && apt install -y git
-RUN echo "v0.5.15" && git clone https://github.com/armoniax/amax.explorer.git
+RUN echo "v0.5.16" && git clone https://github.com/armoniax/amax.explorer.git
 
 RUN mv /amax.explorer/backend /opt/expsvr
 RUN rm -rf /amax.explorer
