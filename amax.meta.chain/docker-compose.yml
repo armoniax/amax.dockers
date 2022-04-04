@@ -1,8 +1,7 @@
 version: "3.9"
 
 services:
-  env_file:
-    - ${ENV_FILE}
+  env_file: ${ENV_FILE}
 
   amaxnode:
     build:
