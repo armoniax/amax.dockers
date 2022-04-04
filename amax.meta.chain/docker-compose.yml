@@ -1,9 +1,9 @@
 version: "3.9"
 
 services:
-  env_file: ${ENV_FILE}
 
   amaxnode:
+    env_file: ${ENV_FILE}
     build:
         context: ./docker
         dockerfile: Dockerfile
