@@ -11,7 +11,7 @@ ENV PARAMS=''
 
 WORKDIR /opt/data/amax
 
-CMD ["./start.sh", "$PARAMS"]
+CMD ["./bin/start.sh", "$PARAMS"]
 
 VOLUME [ "/opt/data/amax/conf", "/opt/data/amax/data", "/opt/data/amax/logs"]
 EXPOSE ${P2P_PORT}
