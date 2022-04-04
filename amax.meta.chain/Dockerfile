@@ -13,7 +13,7 @@ WORKDIR /opt/data/amax
 
 CMD ["./bin/start.sh", "$PARAMS"]
 
-VOLUME [ "/opt/data/amax/conf", "/opt/data/amax/data", "/opt/data/amax/logs"]
+VOLUME [ "/opt/data/amax" ]
 EXPOSE ${P2P_PORT}
 EXPOSE ${RPC_PORT}
 EXPOSE ${STATE_PORT}
