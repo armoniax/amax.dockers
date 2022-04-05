@@ -9,9 +9,6 @@ DATDIR=$AMAX/data
 LOGDIR=$AMAX/logs
 LOGFILE=$LOGDIR/amax.log
 
-#sh $BINDIR/stop.sh $node || true
-echo -e "Starting amnod for $node ...\n";
-
 ulimit -c unlimited
 ulimit -n 65535
 ulimit -s 64000
@@ -19,15 +16,24 @@ ulimit -s 64000
 TIMESTAMP=$(/bin/date +%s)
 NEW_LOG="amax-$TIMESTAMP.log"
 NEW_LOGFILE=$AMAX/logs/$NEW_LOG
+NEWLOG=$LOGDIR/$NEW_LOG
+
 touch $NEW_LOGFILE
 
-amnod $param --genesis-json $CONDIR/genesis.json -e --disable-replay-opts --data-dir $DATDIR --config-dir $CONDIR >> $LOGDIR/$NEW_LOG 2>&1 &
+OPTIONS="--data-dir $DATDIR --config-dir $CONDIR"
+[[ ! -f ${DATDIR}/blocks/blocks.index ]] && OPTIONS="$OPTIONS --genesis-json $CONDIR/genesis.json"
 
-#amnod -e --data-dir $DATDIR --config-dir $CONDIR --delete-all-blocks --genesis-json $CONDIR/genesis.json  >> $LOGDIR/$NEW_LOG 2>&1 &
-#amnod -e --data-dir $DATDIR --config-dir $CONDIR --hard-replay-blockchain --truncate-at-block 87380000 --genesis-json $CONDIR/genesis.json  >> $LOGDIR/$NEW_LOG 2>&1 &
+trap 'echo "[\$(date)]Start Shutdown"; kill \$(jobs -p); wait; echo "[\$(date)]Shutdown ok"' SIGINT SIGTERM
 
+## launch amnod program...
+amnod $param $OPTIONS -e --disable-replay-opts >> $NEWLOG 2>&1 &
+#amnod  $param $OPTIONS --delete-all-blocks >> $NEWLOG 2>&1 &
+#amnod  $param $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEWLOG 2>&1 &
 echo $! > $AMAX/amnod.pid
+
 
 [[ -f "$LOGFILE" ]] && unlink $LOGFILE
 ln -s $NEW_LOGFILE $LOGFILE
-tail -f /dev/null
+
+# tail -f /dev/null
+wait
