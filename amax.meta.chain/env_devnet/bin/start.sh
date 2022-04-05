@@ -7,14 +7,14 @@ AMAX=/opt/data/amax_devnet
 CONDIR=$AMAX/conf
 DATDIR=$AMAX/data
 LOGDIR=$AMAX/logs
-LOGFILE=$LOGDIR/amax.log
+LOGFILE=$LOGDIR/amnod.log
 
 ulimit -c unlimited
 ulimit -n 65535
 ulimit -s 64000
 
 TIMESTAMP=$(/bin/date +%s)
-NEW_LOG="amax-$TIMESTAMP.log"
+NEW_LOG="amnod-$TIMESTAMP.log"
 NEW_LOGFILE=$AMAX/logs/$NEW_LOG
 NEWLOG=$LOGDIR/$NEW_LOG
 
