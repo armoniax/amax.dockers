@@ -23,7 +23,7 @@ touch $NEW_LOGFILE
 OPTIONS="--data-dir $DATDIR --config-dir $CONDIR"
 [[ ! -f ${DATDIR}/blocks/blocks.index ]] && OPTIONS="$OPTIONS --genesis-json $CONDIR/genesis.json"
 
-trap 'echo "[\$(date)]Start Shutdown"; kill \$(jobs -p); wait; echo "[\$(date)]Shutdown ok"' SIGINT SIGTERM
+trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
 ## launch amnod program...
 amnod $param $OPTIONS -e --disable-replay-opts >> $NEWLOG 2>&1 &
