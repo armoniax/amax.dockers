@@ -12,7 +12,7 @@ services:
     container_name: amnod-mainnet
     ports: 
       - "8888:8888"
-      - "9806:9806"
+      - "9806:9876"
       - "9555:9555"
     volumes:
       - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/

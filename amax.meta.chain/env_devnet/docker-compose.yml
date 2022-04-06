@@ -12,7 +12,7 @@ services:
     container_name: amnod-devnet
     ports: 
       - "28888:8888"
-      - "29806:9806"
+      - "29806:9876"
       - "29555:9555"
     volumes:
       - /opt/data/amax_devnet/:/opt/data/amax_devnet/
