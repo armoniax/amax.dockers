@@ -8,3 +8,8 @@ cp -r ${SRC_DIR}/bin  $NOD_DIR/
 cp -r ${SRC_DIR}/conf $NOD_DIR/
 
 podman-compose -f ${SRC_DIR}/docker-compose.yml up --build -d
+
+if [ "$NET" = "mainnet" ]; then
+    sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
+    sudo iptables -I INPUT -p tcp -m tcp --dport 8888 -j ACCEPT
+fi
