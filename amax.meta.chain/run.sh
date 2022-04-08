@@ -7,7 +7,7 @@ mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
 cp -r ${SRC_DIR}/bin  $NOD_DIR/
 cp -r ${SRC_DIR}/conf $NOD_DIR/
 
-podman-compose -f ${SRC_DIR}/docker-compose.yml up -d
+podman-compose up -d
 
 if [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
