@@ -2,17 +2,20 @@ version: "3.9"
 
 services:
 
-  amnod-mainnet:
+  amnod-${NETWORK}:
+    image: armoniax/amnod:${AMNOD_IMG_VER}
     env_file: .env
-    build:
-      context: ../
-      dockerfile: Dockerfile
-      args:
-        NETWORK: mainnet
-    container_name: amnod-mainnet
+    # build:
+    #   context: ../
+    #   dockerfile: Dockerfile
+    #   args:
+    #     NETWORK: mainnet
+    container_name: amnod-${NETWORK}
+    working_dir: /opt/data/amax_${NETWORK}
+    entrypoint: ["./bin/start.sh", "$PARAMs"]
     ports: 
-      - "8888:8888"
-      - "9806:9876"
-      - "9555:9555"
+      - "${RPC_PORT}:8888"
+      - "${P2P_PORT}:9876"
+      - "${HISTORY_WS_PORT}:9555"
     volumes:
-      - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/
+      - /opt/data/amax_${NETWORK}/:/opt/data/amax_${NETWORK}/

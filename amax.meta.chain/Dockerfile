@@ -1,4 +1,4 @@
-FROM armoniax/amnod:0.5.0
+FROM armoniax/amnod:${AMNOD_IMG_VER}
 
 ARG NETWORK
 ARG P2P_PORT=9876
@@ -9,7 +9,7 @@ ARG STATE_PORT=9555
 ENV STATE_PORT=${RPC_PORT}
 ENV PARAMS=''
 
-WORKDIR /opt/data/amax_$NETWORK
+WORKDIR /opt/data/amax_${NETWORK}
 
 CMD ["./bin/start.sh", "$PARAMS"]
 
