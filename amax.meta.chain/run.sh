@@ -7,8 +7,8 @@ mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
 cp -r ${SRC_DIR}/bin  $NOD_DIR/
 cp -r ${SRC_DIR}/conf $NOD_DIR/
 
+set -a
 source ${SRC_DIR}/.env
-
 podman-compose up -d
 
 if [ "$NET" = "mainnet" ]; then
