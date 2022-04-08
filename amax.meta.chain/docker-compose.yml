@@ -2,15 +2,15 @@ version: "3.9"
 
 services:
 
-  amnod-${NETWORK}:
+  amnod-mainnet:
     image: armoniax/amnod:${AMNOD_IMG_VER}
-    env_file: evn_${NETWORK}/.env
-    container_name: amnod-${NETWORK}
-    working_dir: /opt/data/amax_${NETWORK}
+    env_file: evn_${NET}/.env
+    container_name: amnod-${NET}
+    working_dir: /opt/data/amax_${NET}
     entrypoint: ["./bin/start.sh", "$PARAMs"]
     ports: 
       - "${RPC_PORT}:8888"
       - "${P2P_PORT}:9876"
       - "${HISTORY_WS_PORT}:9555"
     volumes:
-      - /opt/data/amax_${NETWORK}/:/opt/data/amax_${NETWORK}/
+      - /opt/data/amax_${NET}/:/opt/data/amax_${NET}/
