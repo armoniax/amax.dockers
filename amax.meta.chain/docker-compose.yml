@@ -1,8 +1,7 @@
 version: "3.9"
 
 services:
-
-  amnod-mainnet:
+  amnod:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     env_file: evn_${NET}/.env
     container_name: amnod-${NET}
