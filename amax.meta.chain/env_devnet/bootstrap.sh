@@ -1,7 +1,5 @@
 # echo "all done..." && exit 0
-# ssh -L 28888:127.0.0.1:28888 -C -N sh-amnod.amax.dev -p 19888 &
-
-
+# ssh -L 8888:127.0.0.1:28888 -C -N sh-amnod.amax.dev -p 19888 &
 amaxOwnerPubKey=AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2
 amaxActivePubKey=AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2
 sys_accounts=(
