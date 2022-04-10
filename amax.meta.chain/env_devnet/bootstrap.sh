@@ -18,8 +18,8 @@ sys_accounts=(
 user_accounts=(
 )
 contracts=(
-    'amax.msig amax.msig'
     'amax amax.system'
+    'amax.msig amax.msig'
     'cnyd.token amax.xtoken'
 )
 reserved_accounts=(
@@ -31,7 +31,7 @@ reserved_accounts=(
 echo "### 1. unlock wallet"
 # amcli wallet unlock -n amax-core
 
-source ./env_devnet/.env
+source .env
 
 # echo "## 1. set active key for `amax` (skip - TODO)#
 # amax set account permission ${contract} active --add-code
@@ -61,7 +61,7 @@ bash ./set_amax.token.sh
 
 BOOTSTRAP_DIR=../../../bootstrap
 echo "enable features..."
-bash $BOOTSTRAP_DIR/enable_features.sh
+bash $BOOTSTRAP_DIR/bin/enable_features.sh
 echo "finishing enabling features..." & sleep 3
 
 for contract_info in "${contracts[@]}"; do
@@ -90,7 +90,3 @@ echo
 echo "check amax.token accounts...."
 ## check accounts
 amcli get table amax.token amax accounts
-
-echo
-echo "Send 1st transfer transaction"
-amcli transfer amax amaxstatoshi "1000.00000000 AMAX" "08/Apr/2022: Dear Satoshi Nakamoto, thanks for pioneering in blockchain technology. We will be relentlessly building a great world of a multi-chain universe and Web3!!!"

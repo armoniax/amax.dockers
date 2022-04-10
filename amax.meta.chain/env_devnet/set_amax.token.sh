@@ -1,6 +1,7 @@
+BOOTSTRAP_DIR=../../../bootstrap
 
 echo "# Deploy amax.token contract"
-amcli set contract amax.token ../amax.token/ -p amax.token@active
+amcli set contract amax.token $BOOTSTRAP_DIR/amax.token/ -p amax.token@active
 echo "....finishing deploying..." && sleep 3
 
 echo "## Create and allocate the SYS currency = AMAX"
