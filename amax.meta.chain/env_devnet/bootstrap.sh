@@ -59,8 +59,9 @@ echo "....finishing creating user accounts..." && sleep 3
 
 bash ./set_amax.token.sh
 
+BOOTSTRAP_DIR=../../../bootstrap
 echo "enable features..."
-bash ../../bootstrap/enable_features.sh
+bash $BOOTSTRAP_DIR/enable_features.sh
 echo "finishing enabling features..." & sleep 3
 
 for contract_info in "${contracts[@]}"; do
@@ -68,7 +69,7 @@ for contract_info in "${contracts[@]}"; do
   acct=${array[0]}
   contract="${array[1]}"
   echo "# Deploy contract: $contract"
-  amcli set contract $acct ../../bootstrap/$contract -p $acct@active
+  amcli set contract $acct $BOOTSTRAP_DIR/$contract -p $acct@active
   echo "finishing deploying $cct..." & sleep 3
 done
 
