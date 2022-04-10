@@ -1,6 +1,30 @@
 # ssh -L 8888:127.0.0.1:8888 -C -N n1.ambt.art -p 19888 &
 # echo "all done..." && exit 0
 
+
+amaxOwnerPubKey=AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2
+amaxActivePubKey=AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2
+sys_accounts=(
+    'amax.msig'
+    'amax.names'
+    'amax.ram'
+    'amax.ramfee'
+    'amax.stake'
+    'amax.token'
+    'amax.rex'
+    'cnyd.token'
+)
+user_accounts=(
+)
+contracts=(
+    'amax.msig amax.msig'
+    'amax amax.system'
+    'cnyd.token amax.xtoken'
+)
+reserved_accounts=(
+
+)
+
 ## This is to run locally
 
 echo "### 1. unlock wallet"
