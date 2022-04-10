@@ -1,4 +1,3 @@
-# ssh -L 8888:127.0.0.1:8888 -C -N n1.ambt.art -p 19888 &
 # echo "all done..." && exit 0
 # ssh -L 28888:127.0.0.1:28888 -C -N sh-amnod.amax.dev -p 19888 &
 
