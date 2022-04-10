@@ -1,5 +1,6 @@
 # ssh -L 8888:127.0.0.1:8888 -C -N n1.ambt.art -p 19888 &
 # echo "all done..." && exit 0
+# ssh -L 28888:127.0.0.1:28888 -C -N sh-amnod.amax.dev -p 19888 &
 
 
 amaxOwnerPubKey=AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2
@@ -28,9 +29,9 @@ reserved_accounts=(
 ## This is to run locally
 
 echo "### 1. unlock wallet"
-amcli wallet unlock -n amax-core
+# amcli wallet unlock -n amax-core
 
-source .env
+source ./env_devnet/.env
 
 # echo "## 1. set active key for `amax` (skip - TODO)#
 # amax set account permission ${contract} active --add-code
@@ -59,7 +60,7 @@ echo "....finishing creating user accounts..." && sleep 3
 bash ./set_amax.token.sh
 
 echo "enable features..."
-bash ./enable_features.sh
+bash ../../bootstrap/enable_features.sh
 echo "finishing enabling features..." & sleep 3
 
 for contract_info in "${contracts[@]}"; do
@@ -67,7 +68,7 @@ for contract_info in "${contracts[@]}"; do
   acct=${array[0]}
   contract="${array[1]}"
   echo "# Deploy contract: $contract"
-  amcli set contract $acct ../bootstrap/$contract -p $acct@active
+  amcli set contract $acct ../../bootstrap/$contract -p $acct@active
   echo "finishing deploying $cct..." & sleep 3
 done
 
