@@ -9,5 +9,6 @@ services:
     ports: 
       - "${RPC_PORT}:8888"
       - "${P2P_PORT}:9876"
+      - "${HIST_WS_PORT}:9555"
     volumes:
       - /opt/data/amax_${NET}/:/opt/data/amax_${NET}/
