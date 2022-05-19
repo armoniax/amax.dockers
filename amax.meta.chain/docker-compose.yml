@@ -5,7 +5,7 @@ services:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     container_name: amnod-${NET}
     working_dir: /opt/data/amax_${NET}
-    entrypoint: ["./bin/start.sh", "$PARAMs"]
+    entrypoint: ["./bin/start.sh", "${NET}", "$PARAMs"]
     ports: 
       - "${RPC_PORT}:8888"
       - "${P2P_PORT}:9876"
