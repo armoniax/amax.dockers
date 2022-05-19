@@ -9,7 +9,8 @@ cp -r ${SRC_DIR}/conf $NOD_DIR/
 
 set -a
 source ${SRC_DIR}/.env
-podman-compose up -d
+#podman-compose up -d
+docker-compose up -d
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
