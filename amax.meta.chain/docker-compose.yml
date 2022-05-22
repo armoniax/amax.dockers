@@ -1,14 +1,26 @@
 version: "3.9"
 
 services:
-  amnod:
+  amnod-mainnet:
     image: armoniax/amnod:${AMNOD_IMG_VER}
-    container_name: amnod-${NET}
-    working_dir: /opt/data/amax_${NET}
-    entrypoint: ["./bin/start.sh", "${NET}", "$PARAMs"]
+    container_name: amnod-mainnet
+    working_dir: /opt/data/amax_mainnet
+    entrypoint: ["./bin/start.sh", "mainnet", "$PARAMs"]
     ports: 
       - "${RPC_PORT}:8888"
       - "${P2P_PORT}:9876"
       - "${HIST_WS_PORT}:9555"
     volumes:
-      - /opt/data/amax_${NET}/:/opt/data/amax_${NET}/
+      - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/
+
+  amnod-testnet:
+    image: armoniax/amnod:${AMNOD_IMG_VER}
+    container_name: amnod-testnet
+    working_dir: /opt/data/amax_testnet
+    entrypoint: ["./bin/start.sh", "testnet", "$PARAMs"]
+    ports: 
+      - "${RPC_PORT}:8888"
+      - "${P2P_PORT}:9876"
+      - "${HIST_WS_PORT}:9555"
+    volumes:
+      - /opt/data/amax_testnet/:/opt/data/amax_testnet/
