@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  amnod-mainnet:
+  mainnet:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     container_name: amnod-mainnet
     working_dir: /opt/data/amax_mainnet
@@ -13,7 +13,7 @@ services:
     volumes:
       - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/
 
-  amnod-testnet:
+  testnet:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     container_name: amnod-testnet
     working_dir: /opt/data/amax_testnet
