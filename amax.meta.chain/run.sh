@@ -4,7 +4,7 @@ NET=$1
 SRC_DIR=./env_$NET
 NOD_DIR=/opt/data/amax_$NET
 mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
-cp -r ./amnod_bin  $NOD_DIR/
+cp -r ./bin  $NOD_DIR/
 cp -r ${SRC_DIR}/conf $NOD_DIR/
 
 set -a
