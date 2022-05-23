@@ -12,6 +12,9 @@ services:
       - "${HIST_WS_PORT}:9555"
     volumes:
       - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/
+    dns:
+      - 114.114.114.114
+      - 8.8.8.8
 
   testnet:
     image: armoniax/amnod:${AMNOD_IMG_VER}
@@ -24,3 +27,6 @@ services:
       - "${HIST_WS_PORT}:9555"
     volumes:
       - /opt/data/amax_testnet/:/opt/data/amax_testnet/
+    dns:
+      - 114.114.114.114
+      - 8.8.8.8
