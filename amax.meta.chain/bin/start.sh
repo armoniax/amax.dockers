@@ -26,7 +26,7 @@ OPTIONS="--data-dir $DATDIR --config-dir $CONDIR"
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
 ## launch amnod program...
-amnod $param $OPTIONS -e --disable-replay-opts >> $NEWLOG 2>&1 &
+amnod $param $OPTIONS >> $NEWLOG 2>&1 &
 #amnod  $param $OPTIONS --delete-all-blocks >> $NEWLOG 2>&1 &
 #amnod  $param $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEWLOG 2>&1 &
 echo $! > $AMAX/amnod.pid
