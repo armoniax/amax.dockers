@@ -2,6 +2,8 @@ NET=$1
 [ -z "$NET" ] && NET=devnet
 
 cd $NET
+set -a
+source ./.env
 
 NOD_DIR=/opt/data/amax_$NET
 mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
@@ -9,8 +11,6 @@ mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
 cp -r ../bin  $NOD_DIR/
 cp -r ./conf $NOD_DIR/
 
-set -a
-source .env
 #podman-compose up -d
 docker-compose up -d
 
