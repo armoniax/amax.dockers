@@ -15,6 +15,9 @@ mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
 
 cp -r ../bin  $NOD_DIR/
 cp -r ./conf $NOD_DIR/
+cp ../config.ini $NOD_DIR/conf/
+
+# copy conf node info into config
 cat ../conf_node.ini >> $NOD_DIR/conf/config.ini
 
 if  [ "$His" == "his" ]; then
