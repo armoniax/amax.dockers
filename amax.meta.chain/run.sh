@@ -1,5 +1,10 @@
 NET=$1
+His=$2
+BP=$3
+
 [ -z "$NET" ] && NET=devnet
+[ -z "$His" ] && His="na"
+[ -z "$BP" ] && BP="na"
 
 cd $NET
 set -a
@@ -10,6 +15,15 @@ mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
 
 cp -r ../bin  $NOD_DIR/
 cp -r ./conf $NOD_DIR/
+cat ../conf_node.ini >> $NOD_DIR/conf/config.ini
+
+if  [ "$His" == "his" ]; then
+    cat ../conf_plubin_history.ini >> $NOD_DIR/conf/config.ini
+fi
+
+if  [ "$BP" == "bp" ]; then
+    cat ../conf_plubin_bp.ini >> $NOD_DIR/conf/config.ini
+fi
 
 #podman-compose up -d
 docker-compose up -d
