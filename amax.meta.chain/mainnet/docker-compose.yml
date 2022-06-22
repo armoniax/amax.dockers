@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  mainnet:
+    image: armoniax/amnod:${AMNOD_IMG_VER}
+    container_name: amnod-mainnet
+    working_dir: /opt/data/amax_mainnet
+    entrypoint: ["./bin/start.sh", "mainnet", "$PARAMs"]
+    ports: 
+      - "${RPC_PORT}:8888"
+      - "${P2P_PORT}:9876"
+      - "${HIST_WS_PORT}:9555"
+    volumes:
+      - /opt/data/amax_mainnet/:/opt/data/amax_mainnet/
+    dns:
+      - 114.114.114.114
+      - 8.8.8.8

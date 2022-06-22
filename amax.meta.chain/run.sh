@@ -1,16 +1,18 @@
 NET=$1
-[ -z "$NET" ] && NET=testnet
+[ -z "$NET" ] && NET=devnet
 
-SRC_DIR=./env_$NET
+cd $NET
+
 NOD_DIR=/opt/data/amax_$NET
 mkdir -p $NOD_DIR $NOD_DIR/data $NOD_DIR/logs
-cp -r ./bin  $NOD_DIR/
-cp -r ${SRC_DIR}/conf $NOD_DIR/
+
+cp -r ../bin  $NOD_DIR/
+cp -r ./conf $NOD_DIR/
 
 set -a
-source ${SRC_DIR}/.env
-#podman-compose up $NET -d
-docker-compose up $NET -d
+source .env
+#podman-compose up -d
+docker-compose up -d
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
