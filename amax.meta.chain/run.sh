@@ -18,11 +18,11 @@ cp -r ./conf $NOD_DIR/
 cat ../conf_node.ini >> $NOD_DIR/conf/config.ini
 
 if  [ "$His" == "his" ]; then
-    cat ../conf_plubin_history.ini >> $NOD_DIR/conf/config.ini
+    cat ../conf_plugin_history.ini >> $NOD_DIR/conf/config.ini
 fi
 
 if  [ "$BP" == "bp" ]; then
-    cat ../conf_plubin_bp.ini >> $NOD_DIR/conf/config.ini
+    cat ../conf_plugin_bp.ini >> $NOD_DIR/conf/config.ini
 fi
 
 #podman-compose up -d
