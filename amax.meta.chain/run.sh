@@ -9,7 +9,7 @@ BP=$3
 cd $NET
 
 set -a
-source ".env"
+source ./.env
 
 NOD_DIR="${NODE_HOME}/amax_${NET}"
 mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
