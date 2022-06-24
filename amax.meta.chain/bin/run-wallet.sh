@@ -1,3 +1,5 @@
+#！/bin/bash
+
 NODE_HOME=$1
 
 WALLDIR=$NODE_HOME/amax_wallet

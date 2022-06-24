@@ -1,3 +1,5 @@
+#！/bin/bash
+
 cd amnod_wallet
 
 set -a
