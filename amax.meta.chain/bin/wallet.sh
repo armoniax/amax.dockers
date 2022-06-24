@@ -1,8 +1,6 @@
 NODE_HOME=$1
 
-LOGFILE=$AMAX/logs/amnod.log
-
-WALLDIR=${NODE_HOME}/amax_wallet
+WALLDIR=$NODE_HOME/amax_wallet
 DATDIR=$WALLDIR/data
 CONFDIR=$WALLDIR/conf
 LOGDIR=$WALLDIR/logs
