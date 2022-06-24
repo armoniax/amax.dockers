@@ -14,9 +14,9 @@ source ./.env
 NOD_DIR="${NODE_HOME}/amax_${NET}"
 mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
-cp ./genesis.json $NOD_DIR/conf/
-cp ./config.ini $NOD_DIR/conf/
 cp -r ../bin $NOD_DIR/
+cp ../config.ini $NOD_DIR/conf/
+cp ./genesis.json $NOD_DIR/conf/
 
 # copy conf node info into config
 cat "./conf_node.ini" >> $NOD_DIR/conf/config.ini
