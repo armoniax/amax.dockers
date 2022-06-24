@@ -6,7 +6,7 @@ BP=$3
 [ -z "$His" ] && His="na"
 [ -z "$BP"  ] && BP="na"
 
-cd $NET
+cd "amnod_$NET"
 
 set -a
 source ./.env
