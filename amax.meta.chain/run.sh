@@ -6,25 +6,27 @@ BP=$3
 [ -z "$His" ] && His="na"
 [ -z "$BP"  ] && BP="na"
 
+cd $NET
+
 set -a
-source "./${NET}/.env"
+source ".env"
 
 NOD_DIR="${NODE_HOME}/amax_${NET}"
 mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
-cp -r ./bin $NOD_DIR/
-cp $NET/genesis.json $NOD_DIR/conf/
+cp ./genesis.json $NOD_DIR/conf/
 cp ./config.ini $NOD_DIR/conf/
+cp -r ../bin $NOD_DIR/
 
 # copy conf node info into config
-cat "./${NET}/conf_node.ini" >> $NOD_DIR/conf/config.ini
+cat "./conf_node.ini" >> $NOD_DIR/conf/config.ini
 
 if  [ "$His" == "his" ]; then
-    cat ./conf_plugin_history.ini >> $NOD_DIR/conf/config.ini
+    cat ../conf_plugin_history.ini >> $NOD_DIR/conf/config.ini
 fi
 
 if  [ "$BP" == "bp" ]; then
-    cat ./conf_plugin_bp.ini >> $NOD_DIR/conf/config.ini
+    cat ../conf_plugin_bp.ini >> $NOD_DIR/conf/config.ini
 fi
 
 #podman-compose up -d
