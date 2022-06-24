@@ -13,7 +13,7 @@ NOD_DIR="${NODE_HOME}/amax_${NET}"
 mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
 cp -r ./bin $NOD_DIR/
-cp $NET/genesis.json $NOD_DIR/
+cp $NET/genesis.json $NOD_DIR/conf/
 cp ./config.ini $NOD_DIR/conf/
 
 # copy conf node info into config

@@ -5,8 +5,6 @@ net=$2
 param=$3
 
 AMAX="${NODE_HOME}/amax_$net"
-CONDIR=
-LOGDIR=
 LOGFILE=$AMAX/logs/amnod.log
 
 ulimit -c unlimited
