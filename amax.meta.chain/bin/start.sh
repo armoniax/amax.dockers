@@ -1,9 +1,10 @@
 #!/bin/bash
 
-net=$1
-param=$2
+NODE_HOME=$1
+net=$2
+param=$3
 
-AMAX=/opt/data/amax_$net
+AMAX="${NODE_HOME}/amax_$net"
 CONDIR=$AMAX/conf
 DATDIR=$AMAX/data
 LOGDIR=$AMAX/logs
