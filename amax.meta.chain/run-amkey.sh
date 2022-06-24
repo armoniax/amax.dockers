@@ -8,6 +8,7 @@ mkdir -p $NOD_DIR/bin $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
 cp ../bin/wallet.sh $NOD_DIR/bin/
 cp ./config.ini $NOD_DIR/conf/
+chmod +x $NOD_DIR/bin/wallet.sh
 
 #podman-compose up -d
 docker-compose up -d
