@@ -1,6 +1,6 @@
 #！/bin/bash
 
-cd amkey_wallet
+cd amkey
 
 set -a
 source ./.env
