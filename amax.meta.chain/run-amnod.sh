@@ -1,7 +1,7 @@
 NET=$1
 
-CONF_DIR="~/.amax_$NET" && mkdir -p $CONF_DIR
-cd ./amnod
+CONF_DIR="~/.amax_$NET"
+mkdir -p $CONF_DIR
 [ ! -f $CONF_DIR/amnod.conf ] && cp ./$NET/amnod.env $CONF_DIR/
 set -a && source $CONF_DIR/amnod.env
 
@@ -9,6 +9,7 @@ NOD_DIR="${NODE_HOME}/amax_${NET}"
 DEST_CONF="${NOD_DIR}/conf/config.ini"
 mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
+cd ./amnod
 cp -r   ./bin                   $NOD_DIR/
 cp      ./genesis.json          $NOD_DIR/conf/
 cp      ./conf/conf_base.ini    $DEST_CONF
