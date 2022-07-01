@@ -42,7 +42,7 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat $CONF_DIR/conf/conf_plugin_bp.ini >> $DEST_CONF
 fi
 
-cd $NET && docker-compose up -d
+cd ./amnod/$NET && docker-compose up -d
 #cd $NET && podman-compose up -d
 
 if   [ "$NET" = "mainnet" ]; then
