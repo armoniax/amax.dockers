@@ -11,7 +11,7 @@ mkdir -p $NOD_DIR/conf $NOD_DIR/data $NOD_DIR/logs
 
 cd ./amnod
 cp -r   ./bin                   $NOD_DIR/
-cp      ./genesis.json          $NOD_DIR/conf/
+cp      ./$NET/genesis.json     $NOD_DIR/conf/
 cp      ./conf/conf_base.ini    $DEST_CONF
 
 # copy conf node info into config
