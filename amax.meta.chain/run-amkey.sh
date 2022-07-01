@@ -1,6 +1,6 @@
 #！/bin/bash
 
-cd amnod_wallet
+cd amkey_wallet
 
 set -a
 source ./.env
