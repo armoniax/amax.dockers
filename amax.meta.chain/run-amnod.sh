@@ -2,8 +2,7 @@ NET=$1
 
 CONF_DIR=~/.amax_$NET
 mkdir -p $CONF_DIR
-ls -la $CONF_DIR
-[ ! -f $CONF_DIR/amnod.conf ] && \
+[ ! -f $CONF_DIR/amnod.env ] && \
     cp ./amnod/$NET/amnod.env $CONF_DIR/ && \
     cp -r ./amnod/conf $CONF_DIR/ && \
     cp -r ./amnod/bin $CONF_DIR/ && \
