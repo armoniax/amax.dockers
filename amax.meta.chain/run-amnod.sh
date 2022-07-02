@@ -1,8 +1,9 @@
 NET=$1
 tag=$2
 
-CONF_DIR=~/.amax_$NET_$tag
+CONF_DIR=~/.amax_${NET}_${tag}
 mkdir -p $CONF_DIR
+
 [ ! -f "$CONF_DIR/amnod.env" ]                     && \
     cp      ./amnod/$NET/amnod.env      $CONF_DIR/ && \
     cp      ./amnod/$NET/genesis.json   $CONF_DIR/ && \
