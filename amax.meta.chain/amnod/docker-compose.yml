@@ -3,7 +3,7 @@ version: "3.9"
 services:
   amnod:
     image: armoniax/amnod:${AMNOD_IMG_VER}
-    container_name: amnod-${NET}
+    container_name: amnod-${NET}-{tag}
     working_dir: "${NODE_HOME}/amax_${NET}"
     entrypoint: ["./bin/start.sh", "$NODE_HOME", "$NET", "$PARAMs"]
     ports: 
