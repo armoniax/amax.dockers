@@ -4,14 +4,14 @@ tag=$2
 CONF_DIR=~/.amax_${NET}_${tag}
 mkdir -p $CONF_DIR
 
-[ ! -f "$CONF_DIR/amnod.env" ]                     && \
-    cp      ./amnod/$NET/amnod.env      $CONF_DIR/ && \
-    cp      ./amnod/$NET/genesis.json   $CONF_DIR/ && \
-    cp      ./amnod/docker-compose.yml  $CONF_DIR/ && \
-    cp -r   ./amnod/conf                $CONF_DIR/ && \
+[ ! -f "$CONF_DIR/amnod.env" ]                          && \
+    cp      ./amnod/$NET/amnod.env      $CONF_DIR/      && \
+    cp      ./amnod/$NET/genesis.json   $CONF_DIR/      && \
+    cp      ./amnod/docker-compose.yml  $CONF_DIR/      && \
+    cp -r   ./amnod/conf                $CONF_DIR/      && \
     cp -r   ./amnod/bin                 $CONF_DIR/
     
-set -a && source $CONF_DIR/amnod.env
+set -a && source $CONF_DIR/.env
 
 DEST_HOME="${NODE_HOME}/amax_${NET}"
 DEST_CONF="${DEST_HOME}/conf/config.ini"
@@ -45,8 +45,8 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat ./conf/conf_plugin_bp.ini >> $DEST_CONF
 fi
 
-docker-compose up -d
-#podman-compose up -d
+docker-compose up -d --env-file ./amnod.env
+#podman-compose up -d --env-file ./amnod.env
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
