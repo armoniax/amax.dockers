@@ -45,8 +45,8 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat ./conf/conf_plugin_bp.ini >> $DEST_CONF
 fi
 
-docker-compose up -d --env-file ./amnod.env
-#podman-compose up -d --env-file ./amnod.env
+docker-compose --env-file ./amnod.env up -d
+#podman-compose --env-file ./amnod.env up -d
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
