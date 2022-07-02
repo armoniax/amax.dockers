@@ -11,7 +11,7 @@ mkdir -p $CONF_DIR
     cp -r   ./amnod/conf                $CONF_DIR/      && \
     cp -r   ./amnod/bin                 $CONF_DIR/
     
-set -a && source $CONF_DIR/.env
+set -a && source $CONF_DIR/amnod.env
 
 DEST_HOME="${NODE_HOME}/amax_${NET}"
 DEST_CONF="${DEST_HOME}/conf/config.ini"
