@@ -11,7 +11,8 @@ mkdir -p $CONF_DIR
     cp -r   ./amnod/conf                $CONF_DIR/      && \
     cp -r   ./amnod/bin                 $CONF_DIR/
     
-echo "tag=$NET" >> $CONF_DIR/amnod.env
+echo "NET=$NET" >> $CONF_DIR/amnod.env
+echo "tag=$tag" >> $CONF_DIR/amnod.env
 set -a && source $CONF_DIR/amnod.env
 
 DEST_HOME="${NODE_HOME}/amax_${NET}"
