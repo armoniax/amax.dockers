@@ -45,7 +45,7 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat ./conf/conf_plugin_bp.ini >> $DEST_CONF
 fi
 
-docker-compose --env-file ./amnod.env up -d
+echo "docker-compose --env-file ./amnod.env up -d" > $CONF_DIR/run.sh
 #podman-compose --env-file ./amnod.env up -d
 
 if   [ "$NET" = "mainnet" ]; then
