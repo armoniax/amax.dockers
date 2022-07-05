@@ -49,6 +49,7 @@ fi
 
 echo "docker-compose --env-file ./amnod.env up -d" > $CONF_DIR/run.sh
 #podman-compose --env-file ./amnod.env up -d
+chmod +x $CONF_DIR/run.sh
 
 if   [ "$NET" = "mainnet" ]; then
     sudo iptables -I INPUT -p tcp -m tcp --dport 9806 -j ACCEPT
