@@ -1,7 +1,11 @@
 
 [ ! -f ./amnod.env ] && echo "not in amnod env, hence existing ..." && exit 1
 
-source ./amnod.env
+set -a && source ./amnod.env
+
+DEST_HOME="${NODE_HOME}/amax_${NET}"
+DEST_CONF="${DEST_HOME}/conf/config.ini"
+mkdir -p $DEST_HOME/conf $DEST_HOME/data $DEST_HOME/logs
 
 cp -r   ./bin                   $DEST_HOME/         && \
 cp      ./genesis.json          $DEST_HOME/conf/    && \
