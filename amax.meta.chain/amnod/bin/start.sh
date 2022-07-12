@@ -1,6 +1,8 @@
 #!/bin/bash
 
 AMAX=$1
+params=$2
+
 LOGFILE=$AMAX/logs/amnod.log
 
 ulimit -c unlimited
@@ -18,9 +20,9 @@ OPTIONS="--data-dir $AMAX/data --config-dir $AMAX/conf"
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
 ## launch amnod program...
-amnod $param $OPTIONS >> $NEW_LOGFILE 2>&1 &
-#amnod  $param $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
-#amnod  $param $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
+amnod $params $OPTIONS >> $NEW_LOGFILE 2>&1 &
+#amnod  $params $OPTIONS --delete-all-blocks >> $NEW_LOGFILE 2>&1 &
+#amnod  $params $OPTIONS --hard-replay-blockchain --truncate-at-block 87380000 >> $NEW_LOGFILE 2>&1 &
 echo $! > $AMAX/amnod.pid
 
 
