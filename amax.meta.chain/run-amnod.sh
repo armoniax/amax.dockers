@@ -9,29 +9,29 @@ mkdir -p $DEST_HOME/conf $DEST_HOME/data $DEST_HOME/logs
 
 cp -r   ./bin                   $DEST_HOME/         && \
 cp      ./genesis.json          $DEST_HOME/conf/    && \
-cp      ./conf/conf_base.ini    $DEST_CONF
+cp      ./conf/base.ini    $DEST_CONF
 
 # copy conf node info into config
 echo " " >> $DEST_CONF
 echo "#### Node base conf: " >> $DEST_CONF
-cat ./conf/conf_node.ini >> $DEST_CONF
+cat ./conf/node.ini >> $DEST_CONF
 
 if  [ "${history_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
     echo "#### History plugin conf: " >> $DEST_CONF
-    cat ./conf/conf_plugin_history.ini >> $DEST_CONF
+    cat ./conf/plugin_history.ini >> $DEST_CONF
 fi
 
 if  [ "${state_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
     echo "#### State plugin conf: " >> $DEST_CONF
-    cat ./conf/conf_plugin_state.ini >> $DEST_CONF
+    cat ./conf/plugin_state.ini >> $DEST_CONF
 fi
 
 if  [ "${bp_plugin}" == "true" ]; then
     echo " " >> $DEST_CONF
     echo "#### Block producer plugin conf: " >> $DEST_CONF
-    cat ./conf/conf_plugin_bp.ini >> $DEST_CONF
+    cat ./conf/plugin_bp.ini >> $DEST_CONF
 fi
 
 docker-compose --env-file ./amnod.env up -d
