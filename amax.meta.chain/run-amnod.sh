@@ -3,7 +3,7 @@
 
 set -a && source ./amnod.env
 
-DEST_HOME="${NODE_HOME}/amax_${NET}"
+DEST_HOME="${NODE_HOME}/amax_${NET}_${tag}"
 DEST_CONF="${DEST_HOME}/conf/config.ini"
 mkdir -p $DEST_HOME/conf $DEST_HOME/data $DEST_HOME/logs
 
