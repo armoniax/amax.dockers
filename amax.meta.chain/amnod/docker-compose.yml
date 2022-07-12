@@ -11,7 +11,7 @@ services:
       - "${P2P_PORT}:9876"
       - "${HIST_WS_PORT}:9555"
     volumes:
-      - ${NODE_HOME}/amax_$NET/:${NODE_HOME}/amax_${NET}/
+      - ${NODE_HOME}/amax_${NET}_${tag}/:${NODE_HOME}/amax_${NET}_${tag}/
     dns:
       - 114.114.114.114
       - 8.8.8.8
