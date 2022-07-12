@@ -1,10 +1,6 @@
 #!/bin/bash
 
-NODE_HOME=$1
-net=$2
-param=$3
-
-AMAX="${NODE_HOME}/amax_$net"
+AMAX=$1
 LOGFILE=$AMAX/logs/amnod.log
 
 ulimit -c unlimited
