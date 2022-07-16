@@ -6,6 +6,7 @@ services:
     container_name: amnod-${NET}-${tag}
     working_dir: ${NODE_HOME}/amax_${NET}_${tag}
     entrypoint: ["./bin/start.sh", "$NODE_HOME/amax_${NET}_${tag}", "$PARAMs"]
+    restart: always
     ports: 
       - "${RPC_PORT}:8888"
       - "${P2P_PORT}:9876"

@@ -10,9 +10,7 @@ ulimit -n 65535
 ulimit -s 64000
 
 TIMESTAMP=$(/bin/date +%s)
-NEW_LOGFILE="${AMAX}/logs/amnod-${TIMESTAMP}.log"
-
-touch $NEW_LOGFILE
+NEW_LOGFILE="${AMAX}/logs/${TIMESTAMP}.log" && touch $NEW_LOGFILE
 
 OPTIONS="--data-dir $AMAX/data --config-dir $AMAX/conf"
 [[ ! -f $AMAX/data/blocks/blocks.index ]] && OPTIONS="$OPTIONS --genesis-json $AMAX/conf/genesis.json"
