@@ -11,7 +11,7 @@ services:
     volumes:
       - ${NODE_HOME}/amax_wallet/:${NODE_HOME}/amax_wallet/
     env_file:
-      - ~/.amkey.env 
+      - .env 
     dns:
       - 114.114.114.114
       - 8.8.8.8
