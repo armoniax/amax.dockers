@@ -4,12 +4,12 @@ services:
   amkey:
     image: armoniax/amnod:${AMNOD_IMG_VER}
     container_name: amax-wallet
-    working_dir: "${NODE_HOME}/amax_wallet"
+    working_dir: "${AMAX}/amax_wallet"
     entrypoint: ["./bin/run-wallet.sh", "$NODE_HOME"]
     ports: 
       - "${WALLET_PORT}:7777"
     volumes:
-      - ${NODE_HOME}/amax_wallet/:${NODE_HOME}/amax_wallet/
+      - ${AMAX}/amax_wallet/:${AMAX}/amax_wallet/
     env_file:
       - .env 
     dns:
