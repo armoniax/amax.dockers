@@ -16,3 +16,8 @@ services:
     dns:
       - 114.114.114.114
       - 8.8.8.8
+      
+ networks:
+  default:
+    name: amax
+    external: true
