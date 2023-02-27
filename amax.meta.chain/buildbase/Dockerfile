@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 # install dependencies
 
 RUN apt update && apt install -y git
-RUN cd / && git clone --recursive https://github.com/armoniax/amax.meta.chain.git
+RUN cd / && git clone https://github.com/armoniax/amax.meta.chain.git
 WORKDIR /amax.meta.chain
-RUN  git checkout tags/v0.6.0-develop
+RUN  git checkout tags/v0.6.0-develop && git submodule update --init --recursive
 RUN  bash ./scripts/amax_build.sh -y \
   && cd ./build/packages && bash generate_package.sh deb
 
