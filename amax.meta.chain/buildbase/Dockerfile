@@ -5,13 +5,13 @@ FROM ubuntu:18.04
 RUN apt update && apt install -y git
 RUN cd / && git clone --recursive https://github.com/armoniax/amax.meta.chain.git
 WORKDIR /amax.meta.chain
-RUN git checkout tags/v0.5.0
-RUN bash ./scripts/amax_build.sh -y
-RUN cd ./build/packages && bash generate_package.sh deb
+RUN  git checkout tags/v0.6.0-develop
+RUN  bash ./scripts/amax_build.sh -y \
+  && cd ./build/packages && bash generate_package.sh deb
 
 ## create amax.meta.chain runtime env
 FROM phusion/baseimage:bionic-1.0.0
-ARG amc_pkg=amax_0.5.0-1_amd64.deb
+ARG amc_pkg=amax_0.6.0-develop_amd64.deb
 ARG PUB_KEY
 ARG PRIV_KEY
 COPY --from=0 /amax.meta.chain/build/packages/$amc_pkg /$amc_pkg
