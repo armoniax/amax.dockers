@@ -34,6 +34,7 @@ if  [ "${bp_plugin}" == "true" ]; then
     cat ./conf/plugin_bp.ini >> $DEST_CONF
 fi
 
+docker network create amax
 docker-compose --env-file ./amnod.env up -d
 #podman-compose --env-file ./amnod.env up -d
 
