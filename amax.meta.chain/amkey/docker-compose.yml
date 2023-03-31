@@ -3,13 +3,12 @@ version: "3.9"
 services:
   amkey:
     image: armoniax/amnod:${AMNOD_IMG_VER}
-    container_name: amax-wallet
-    working_dir: "${AMAX}/amax_wallet"
-    entrypoint: ["./bin/run-wallet.sh", "$NODE_HOME"]
-    ports: 
-      - "${WALLET_PORT}:7777"
+    container_name: raysvault
+    working_dir: /opt/amax
+    entrypoint: ["./bin/run-wallet.sh", "."]
     volumes:
-      - ${AMAX}/amax_wallet/:${AMAX}/amax_wallet/
+      - ${host}/:/opt/amax
+      - ${host}/bin/.bashrc:/root/.bashrc
     env_file:
       - .env 
     dns:
