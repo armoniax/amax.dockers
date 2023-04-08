@@ -20,3 +20,13 @@ The contents of data/state-history:
 - trace_history.index: optional. Restoring will take longer without this file.
 
 Optional: the contents of data/blocks, but excluding data/blocks/reversible.
+
+# Restore Snapshot with full state history
+
+1. Get the following:
+
+- A portable snapshot (`data/snapshots/snapshot-xxxxxxx.bin`)
+- The contents of `data/state-history`
+- Optional: a block log which includes the block the snapshot was taken at. Do *NOT* include `data/blocks/reversible`.
+
+2. Make sure `data/state` does not exist
