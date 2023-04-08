@@ -13,10 +13,10 @@ curl http://127.0.0.1:8888/v1/producer/create_snapshot | json_pp
 Make backups of:
 - The newly-created portable snapshot (`data/snapshots/snapshot-xxxxxxx.bin`)
 - The contents of `data/state-history`:
-  - chain_state_history.log
-  - trace_history.log
-  - chain_state_history.index: optional. Restoring will take longer without this file.
-  - trace_history.index: optional. Restoring will take longer without this file.
+  - `chain_state_history.log`
+  - `trace_history.log`
+  - `chain_state_history.index`: optional. Restoring will take longer without this file.
+  - `trace_history.index`: optional. Restoring will take longer without this file.
 
 Optional: the contents of data/blocks, but excluding data/blocks/reversible.
 
