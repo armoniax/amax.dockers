@@ -30,3 +30,5 @@ Optional: the contents of data/blocks, but excluding data/blocks/reversible.
 - Optional: a block log which includes the block the snapshot was taken at. Do *NOT* include `data/blocks/reversible`.
 
 2. Make sure `data/state` does not exist
+3. Start `amnod` with the `--snapshot` option, and the options listed in the `state_history_plugin`.
+4. Do not stop `amnod` until it has received at least 1 block from the network, or it won't be able to restart.
