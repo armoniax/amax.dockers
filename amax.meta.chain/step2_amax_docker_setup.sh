@@ -2,8 +2,8 @@
 # 进入当前用户home目录
 cd ~
 
-# git clone https://github.com/armoniax/amax.dockers.git
-git clone https://github.com/hub500/amax.dockers.git
+git clone https://github.com/armoniax/amax.dockers.git
+#git clone https://github.com/hub500/amax.dockers.git
 
 # 进入 amax.chain 目录执行命令
 cd ./amax.dockers/amax.meta.chain
