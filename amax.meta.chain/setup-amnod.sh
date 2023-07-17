@@ -3,6 +3,7 @@ tag=$2
 
 CONF_DIR=~/.amax_${NET}_${tag}
 mkdir -p $CONF_DIR
+echo $CONF_DIR
 
 [ ! -f "$CONF_DIR/amnod.env" ]                          && \
     cp      ./amnod/$NET/amnod.env      $CONF_DIR/      && \
