@@ -157,3 +157,20 @@ docker exec -it amnod-mainnet-0.5.2 amcli get info
 
 ![image](https://github.com/hub500/amax.dockers/assets/80018598/5a8f8996-d151-460e-b877-031188388992)
 
+### 遇到部署问题或出错情况请提交issues
+
+[提交issues](https://github.com/armoniax/amax.dockers/issues)
+
+问题描述格式要求：
+
+```
+服务器系统环境：xxx
+
+执行什么命令：xxx
+
+执行结果出错：xxx
+
+最好把报错结果截图上传上来，方便技术人员排查问题
+```
+
+技术人员会在第一时间查看解决处理的
