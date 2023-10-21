@@ -117,6 +117,11 @@ signature-provider = AM5SMw8Lum7MG9V61LQz8enJyM9MB7WBpvoiXsp5YmAJXZmE92j2=KEY:5J
 ![image](https://github.com/hub500/amax.dockers/assets/80018598/3aa981cb-bab9-4533-9e35-444520a81066)
 
 
+【注意】
+
+**打开 plugin_bp.ini 文件，把此文件内容全部复制到 node.ini 文件中，然后重启服务器节点**
+
+
 ### 重启超级节点
 
 1. 查看镜像名称
