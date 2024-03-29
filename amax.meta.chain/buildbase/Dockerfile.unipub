@@ -3,14 +3,14 @@ FROM ubuntu:18.04
 # install dependencies
 
 RUN apt update && apt install -y git apt-utils
-RUN cd / && echo "Download unipub-hotfix" && git clone --recursive https://github.com/armoniax/amax.meta.chain.git --branch=unipub-hotfix
+RUN cd / && echo "Download unipub-hotfix" && git clone --recursive https://github.com/armoniax/amax.meta.chain.git && cd ./amax.meta.chain && git checkout tags/v0.5.3
 WORKDIR /amax.meta.chain
 RUN bash ./scripts/amax_build.sh -y
 RUN cd ./build/packages && bash generate_package.sh deb
 
 ## create amax.meta.chain runtime env
 FROM phusion/baseimage:bionic-1.0.0
-ARG amc_pkg=amax_0.5.0-1_amd64.deb
+ARG amc_pkg=amax_0.5.3-1_amd64.deb
 ARG PUB_KEY
 ARG PRIV_KEY
 COPY --from=0 /amax.meta.chain/build/packages/$amc_pkg /$amc_pkg
