@@ -8,6 +8,7 @@
 
 ## 观察节点容器化部署
 [观察节点容器化部署文档](./ObserveNodeDockerDeploy.md)
+
 [Observation node dockerized deployment guide](./ObserveNodeDockerDeploy.md)
 
 ## 超级节点部署
