@@ -13,7 +13,7 @@ TIMESTAMP=$(/bin/date +%s)
 NEW_LOGFILE="${AMAX}/logs/${TIMESTAMP}.log" && touch $NEW_LOGFILE
 
 OPTIONS="--data-dir $AMAX/data --config-dir $AMAX/conf"
-[[ ! -f $AMAX/data/blocks/blocks.index ]] && OPTIONS="$OPTIONS --genesis-json $AMAX/conf/genesis.json"
+# [[ ! -f $AMAX/data/blocks/blocks.index ]] && OPTIONS="$OPTIONS --genesis-json $AMAX/conf/genesis.json"
 
 trap 'echo "[$(date)]Start Shutdown"; kill $(jobs -p); wait; echo "[$(date)]Shutdown ok"' SIGINT SIGTERM
 
