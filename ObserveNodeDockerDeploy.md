@@ -32,7 +32,7 @@
 
 进入第一步生成的文件夹
 
-```cd /home/devops/.amax_mainnet_001```
+```cd /xxx/.amax_mainnet_001```
 
 ```vim bin/start.sh```
 
