@@ -40,8 +40,11 @@
 
 根据需要打开插件（查询历史交易：history_plugin，扫链：state_plugin）
 ```vim amnod.env```
+
 ```history_plugin=false```
+
 ```state_plugin=false```
+
 
 运行启动命令
 
