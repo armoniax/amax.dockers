@@ -46,4 +46,17 @@ vim amnod.env
 
 sh run.sh
 
+即可启动容器amnod-mainnet-001
+
+四、检查容器状态
+
+进入容器
+
+docker exec -it amnod-mainnet-001 bash
+
+检查节点状态
+
+amcli get info
+
+（需要几分钟时间同步快照数据）
 
