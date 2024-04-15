@@ -39,9 +39,9 @@
 找到./data/snapshots/snapshot-03c75e09723daf6e18a716a37934059c68aa5f00de0b89a1a277f6ab36b08294.bin,更新snapshot文件名
 
 根据需要打开插件（查询历史交易：history_plugin，扫链：state_plugin）
-```vim amnod.env
-history_plugin=false
-state_plugin=false```
+```vim amnod.env```
+```history_plugin=false```
+```state_plugin=false```
 
 运行启动命令
 
