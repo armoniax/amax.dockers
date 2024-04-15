@@ -1,9 +1,9 @@
 ### 一、准备启动脚本 
-```git clone https://github.com/armoniax/amax.dockers.git```
-  
-```cd amax.dockers/amax.meta.chain```
-  
-```sh setup-amnod.sh mainnet 001```
+```
+git clone https://github.com/armoniax/amax.dockers.git
+cd amax.dockers/amax.meta.chain
+sh setup-amnod.sh mainnet 001
+```
 
 打印出一个目录/xxx/.amax_mainnet_001 (先记住这个路径，后面用到)
 
