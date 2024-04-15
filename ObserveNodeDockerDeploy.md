@@ -12,7 +12,7 @@
 
 ```cd /opt/data```
 
-```mkdir amax_mainnet_001/data/snapshots/```
+```mkdir -p amax_mainnet_001/data/snapshots/```
 
 ```cd amax_mainnet_001/data/snapshots/```
 
@@ -34,9 +34,9 @@
 
 ```cd /home/devops/.amax_mainnet_001```
 
-```vim amnod.env```
+```vim bin/start.sh```
 
-找到PARAMs=" --disable-replay-opts  --snapshot ./data/snapshots/snapshot-03c75e09723daf6e18a716a37934059c68aa5f00de0b89a1a277f6ab36b08294.bin"
+找到./data/snapshots/snapshot-03c75e09723daf6e18a716a37934059c68aa5f00de0b89a1a277f6ab36b08294.bin
 
 更新snapshot文件名
 
@@ -56,5 +56,5 @@
 
 ```amcli get info```
 
-（需要几分钟时间同步快照数据）
+（需要5-10分钟时间同步快照数据）
 
