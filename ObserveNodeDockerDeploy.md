@@ -1,11 +1,11 @@
 
-一、准备启动脚本
+一、准备启动脚本 
 
-git clone https://github.com/armoniax/amax.dockers.git
-
-cd amax.dockers/amax.meta.chain
-
-sh setup-amnod.sh mainnet 001
+  git clone https://github.com/armoniax/amax.dockers.git
+  
+  cd amax.dockers/amax.meta.chain
+  
+  sh setup-amnod.sh mainnet 001
 
 打印出一个目录/xxx/.amax_mainnet_001 (先记住这个路径，后面用到)
 
@@ -35,6 +35,12 @@ unzstd snapshot.amaxscan.io/snapshot-03c7xx.bin.zst
 进入第一步生成的文件夹
 
 cd /home/devops/.amax_mainnet_001
+
+vim amnod.env
+
+找到PARAMs=" --disable-replay-opts  --snapshot ./data/snapshots/snapshot-03c75e09723daf6e18a716a37934059c68aa5f00de0b89a1a277f6ab36b08294.bin"
+
+更新snapshot文件名
 
 运行启动命令
 
