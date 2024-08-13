@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 RUN apt update && apt install -y git
 RUN cd / && git clone --recursive https://github.com/armoniax/amax.meta.chain.git
 WORKDIR /amax.meta.chain
-RUN git checkout tags/v0.5.0
+RUN git checkout tags/v1.0.0
 RUN bash ./scripts/amax_build.sh -y
 RUN cd ./build/packages && bash generate_package.sh deb
 
@@ -16,8 +16,9 @@ ARG PUB_KEY
 ARG PRIV_KEY
 COPY --from=0 /amax.meta.chain/build/packages/$amc_pkg /$amc_pkg
 
-RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  libicu60 libusb-1.0-0 libcurl3-gnutls
+RUN apt-get update && apt-get upgrade -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+      libicu60 libusb-1.0-0 libcurl3-gnutls
 RUN apt -y install /${amc_pkg}
 RUN rm -rf /${amc_pkg} && mkdir /opt/amax
 WORKDIR /opt/amax
