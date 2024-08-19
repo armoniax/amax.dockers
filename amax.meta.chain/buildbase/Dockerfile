@@ -7,7 +7,7 @@ WORKDIR /amax.meta.chain
 
 ARG TAG=v1.0.1
 
-RUN git checkout "tags/${TAG}"
+RUN git checkout tags/${TAG}
 RUN bash ./scripts/amax_build.sh -y
 RUN cd ./build/packages && bash generate_package.sh deb
 
