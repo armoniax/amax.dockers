@@ -5,7 +5,7 @@ RUN apt update && apt install -y git
 RUN cd / && git clone --recursive https://github.com/armoniax/amax.meta.chain.git
 WORKDIR /amax.meta.chain
 
-ARG TAG=v1.0.1
+ARG TAG=v1.0.2
 
 RUN git pull && git checkout tags/${TAG}
 RUN bash ./scripts/amax_build.sh -y
@@ -13,10 +13,11 @@ RUN cd ./build/packages && bash generate_package.sh deb
 
 ## create amax.meta.chain runtime env
 FROM phusion/baseimage:bionic-1.0.0
-ARG TAG=1.0.1
 ARG amc_pkg="amax_${TAG}-1_amd64.deb"
 ARG PUB_KEY
 ARG PRIV_KEY
+
+ARG TAG=1.0.2
 
 COPY --from=0 /amax.meta.chain/build/packages/$amc_pkg /$amc_pkg
 RUN apt-get update && apt-get upgrade -y && \
