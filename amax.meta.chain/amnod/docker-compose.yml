@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   amnod:
     image: armoniax/amnod:${AMNOD_IMG_VER}
